@@ -7,7 +7,7 @@ interface IReservationState {
   numberOfGuests: number
 }
 
-type IReservationTypes = 
+type IReservationTypes =
   'isGoing' |
   'numberOfGuests'
 
@@ -31,12 +31,23 @@ class Reservation extends React.Component<IReservationProps, IReservationState> 
 
   private handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name: IReservationTypes = target.name;
 
-    this.setState({
-      [name]: value
-    });
+    if (target.type === 'checkbox') {
+      this.setState({
+        isGoing: target.checked
+      })
+    } else {
+      if (target.value) {
+        this.setState({
+          numberOfGuests: Number.parseInt(target.value)
+        })
+      } else {
+        this.setState({
+          numberOfGuests: 0
+        })
+      }
+    }
+    console.log(target.value)
   }
 
   render() {

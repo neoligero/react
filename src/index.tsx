@@ -8,6 +8,7 @@ import CCounter from './components/counter';
 import CToggle from './components/toggleButton';
 import CLogin from './components/loginButton';
 import CBlog from './components/blog';
+import CReservation from './components/form'
 
 const posts = [
   { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
@@ -22,6 +23,7 @@ const App = () => {
       <CToggle />
       <CLogin onLogin={console.log} />
       <CBlog posts={posts} />
+      <CReservation />
     </div>
   )
 }
