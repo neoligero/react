@@ -1,10 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import CClock from './components/clock';
+import CCounter from './components/counter';
+import CToggle from './components/toggleButton';
+import CLogin from './components/loginButton';
+import CBlog from './components/blog';
+
+const posts = [
+  { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
+  { id: 2, title: 'Installation', content: 'You can install React from npm.' }
+];
+
+const App = () => {
+  return (
+    <div>
+      <CClock />
+      <CCounter />
+      <CToggle />
+      <CLogin onLogin={console.log} />
+      <CBlog posts={posts} />
+    </div>
+  )
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
