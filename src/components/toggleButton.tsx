@@ -33,8 +33,4 @@ class Toggle extends React.Component<IToggleProps, IToggleState> {
   }
 }
 
-const CToggle = () => {
-  return <Toggle />;
-}
-
-export default CToggle
+export default Toggle

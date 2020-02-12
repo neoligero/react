@@ -3,8 +3,8 @@ import React from 'react'
 interface IReservationProps { }
 
 interface IReservationState {
-  isGoing: boolean
-  numberOfGuests: number
+  isGoing?: boolean | undefined
+  numberOfGuests?: number | undefined
 }
 
 type IReservationTypes =
@@ -19,35 +19,28 @@ class Reservation extends React.Component<IReservationProps, IReservationState> 
     numberOfGuests: 0
   }
 
-  constructor(props: IReservationProps) {
+  /*constructor(props: IReservationProps) {
     super(props);
     this.state = {
       isGoing: true,
       numberOfGuests: 2
     };
-    // Old way
-    // this.handleInputChange = this.handleInputChange.bind(this);
-  }
+  }*/
 
   private handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target;
+    let query: Partial<IReservationState> = {}
 
     if (target.type === 'checkbox') {
-      this.setState({
-        isGoing: target.checked
-      })
+      query = { isGoing: target.checked }
     } else {
       if (target.value) {
-        this.setState({
-          numberOfGuests: Number.parseInt(target.value)
-        })
+        query = { numberOfGuests: Number.parseInt(target.value) }
       } else {
-        this.setState({
-          numberOfGuests: 0
-        })
+        query = { numberOfGuests: 0 }
       }
     }
-    console.log(target.value)
+    this.setState(query)
   }
 
   render() {
@@ -67,7 +60,7 @@ class Reservation extends React.Component<IReservationProps, IReservationState> 
           <input
             name="numberOfGuests"
             type="number"
-            value={this.state.numberOfGuests}
+            value={this.state.numberOfGuests || ""}
             onChange={this.handleInputChange} />
         </label>
       </form>
