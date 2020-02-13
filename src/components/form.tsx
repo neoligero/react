@@ -7,9 +7,9 @@ interface IReservationState {
   numberOfGuests?: number | undefined
 }
 
-type IReservationTypes =
+/*type IReservationTypes =
   'isGoing' |
-  'numberOfGuests'
+  'numberOfGuests'*/
 
 
 class Reservation extends React.Component<IReservationProps, IReservationState> {
