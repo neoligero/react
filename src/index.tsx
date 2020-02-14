@@ -10,6 +10,7 @@ import CLogin from './components/loginButton';
 import CBlog from './components/blog';
 import CReservation from './components/form'
 import CCalculator from './components/calculator'
+import CSignUp from './components/singupdialog'
 
 const posts = [
   { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
@@ -18,7 +19,7 @@ const posts = [
 
 const App = () => {
   return (
-    <div>
+    <>
       <CClock />
       <CCounter />
       <CToggle />
@@ -26,7 +27,8 @@ const App = () => {
       <CBlog posts={posts} />
       <CReservation />
       <CCalculator />
-    </div>
+      <CSignUp />
+    </>
   )
 }
 

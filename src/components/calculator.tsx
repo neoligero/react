@@ -66,14 +66,12 @@ class TemperatureInput extends React.Component<ITemperatureInputProps, ITemperat
   }
 }
 
-interface ICalculatorProps {
-
-}
+interface ICalculatorProps { }
 
 interface ICalculatorState {
   scale: string
   temperature: string
- }
+}
 
 class Calculator extends React.Component<ICalculatorProps, ICalculatorState> {
   constructor(props: ICalculatorProps) {
