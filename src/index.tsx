@@ -11,6 +11,8 @@ import CBlog from './components/blog';
 import CReservation from './components/form'
 import CCalculator from './components/calculator'
 import CSignUp from './components/singupdialog'
+import CClicker from './components/clicker'
+import CFriendStatus from './components/friendStatus'
 
 const posts = [
   { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
@@ -32,8 +34,17 @@ const App = () => {
   )
 }
 
+const HookApp = () => {
+  return (
+    <>
+      <CClicker />
+      <CFriendStatus />
+    </>
+  );
+}
+
 ReactDOM.render(
-  <App />,
+  <HookApp />,
   document.getElementById('root')
 );
 
