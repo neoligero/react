@@ -13,12 +13,14 @@ import CCalculator from './components/calculator'
 import CSignUp from './components/singupdialog'
 import CClicker from './components/clicker'
 import CFriendStatus from './components/friendStatus'
+import CClicker2 from './components/clicker2'
 
 const posts = [
   { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
   { id: 2, title: 'Installation', content: 'You can install React from npm.' }
 ];
 
+// eslint-disable-next-line
 const App = () => {
   return (
     <>
@@ -39,6 +41,7 @@ const HookApp = () => {
     <>
       <CClicker />
       <CFriendStatus />
+      <CClicker2 initial={10} />
     </>
   );
 }

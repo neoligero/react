@@ -13,11 +13,11 @@ const TestAPI = {
 }
 
 function FriendStatus(props: any) {
-  const [isOnline, setIsOnline] = useState(null);
+  const [isOnline, setIsOnline] = useState(false);
 
   useEffect(() => {
     function handleStatusChange(status: any) {
-      setIsOnline(status);
+      setIsOnline(true);
     }
 
     TestAPI.getUser("asdf", handleStatusChange);
@@ -27,10 +27,10 @@ function FriendStatus(props: any) {
     };
   }, [isOnline]);
 
-  if (isOnline === null) {
+  if (isOnline === false) {
     return <div><h4 color='red'>Loading...</h4></div>
   }
-  return <div><h4 color='green'>{isOnline}</h4></div>
+  return <div><h4 style={{color:'green'}}>user{isOnline}</h4></div>
 }
 
 export default FriendStatus
